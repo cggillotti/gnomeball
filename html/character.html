@@ -1,0 +1,781 @@
+<h1>Gnomeball</h1>
+<br><br>
+<div class="inline">
+<label>Player</label> <input name="attr_player_name" title="" type="text" value="" />
+</div>
+
+<div class="player_info">
+    <div class="inline">
+    <label>Gnome Name</label>
+    <input name="attr_gnome_name" class="gnome_name" title="" type="text" value="" />
+    </div>
+    
+    <div class="inline">
+    <label>Gnome Type</label>
+    <select name="attr_player_type" class="type_select">
+        <option name="attr_player_type_fattie" value="Fattie">Fattie</option>
+        <option name="attr_player_type_scrapper" value="Scrapper">Scrapper</option>
+        <option name="attr_player_type_hurler" value="Hurler">Hurler</option>
+        <option name="attr_player_type_team" value="Team">Team</option>
+    </select>
+    </div>
+    
+    <div class="inline">
+
+    <label>Level</label>
+    <input class="level" name="attr_player_level" title="" type="text" value="" />
+    </div>
+    <input type="hidden" class="" name="attr_gnome_encode"></input>
+</div>
+
+<div class="abilities">
+    <input type="hidden" class="player_type_selection" name="attr_type_selection"></input>
+<div class="ability">
+<label>Contact Roll</label>
+<input name="attr_player_contact" title="" type="text" value="" />
+<button type="roll" value="!gbat @{gnome_encode} @{player_contact}" name="roll_contactCheck">Roll Contact</button> 
+</div>
+
+<div class="ability">
+<label>Offensive Skills</label>
+<input name="attr_player_offensive_skills"  title="" type="text" value="" />
+</div>
+
+<div class="ability">
+<label>Power Roll</label>
+<input name="attr_player_power" title="" type="text" value="" />
+<button type="roll" value="!gpower @{gnome_encode} @{player_power}" name="roll_fieldCheck">Roll Power</button> 
+
+</div><div class="ability">
+<label>Defensive Skills</label>
+<input name="attr_player_defensive_skills" class="defense_skills" title="" type="text" value="" />
+<!--<label class="gb">GB Bonus</label>-->
+<!--<input class="gb" name="attr_player_gb" title="" type="text" value="" />-->
+<!--<label class="double">Double</label>-->
+<!--<input class="double" type='checkbox' name="attr_double" value='1' />-->
+<!--<label class="triple">Triple</label>-->
+<!--<input class="triple" type='checkbox' name="attr_double" value='1' />-->
+</div><div class="ability">
+
+<label>Fielding Roll</label>
+<input name="attr_player_fielding" title="" type="text" value="" />
+<button type="roll" value="!gfield @{gnome_encode} @{player_fielding}" name="roll_fieldCheck">Roll Fielding</button> 
+</div>
+<div class="team_roster">
+    <div class="team_player">
+        <div class="slot">1:</div>
+
+        <div class="team_player_info">
+            <label>Name</label>
+            <div class="player_name"><input name="attr_team_player1_name" title="" type="text" value="" /></div>
+            <label>Type</label>
+            <select name="attr_team_player1_type" class="type_select">
+                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+            </select>    
+        </div>
+        <input type="hidden" name="attr_gnome1_encode"></input>
+        <div class="team_player_abilities">
+        <div class="ability">
+            <label>Contact Roll</label>
+            <input name="attr_team_player1_contact" title="" type="text" value="" />
+            <button type="roll" value="!gbat @{gnome1_encode} @{team_player1_contact}" name="roll_contactCheck">Roll Contact</button> 
+        </div>
+
+        <div class="ability">
+            <label>Power Roll</label>
+            <input name="attr_team_player1_power" title="" type="text" value="" />
+            <button type="roll" value="!gpower @{gnome1_encode} @{team_player1_power}" name="roll_contactCheck">Roll Power</button> 
+        </div>
+
+        <div class="ability">
+            <label>Field Roll</label>
+            <input name="attr_team_player1_field" title="" type="text" value="" />
+            <!--<input name="attr_team_player1_gb" title="" type="text" value="" />-->
+            <button type="roll" value="!gfield @{gnome1_encode} @{team_player1_field}" name="roll_contactCheck">Roll Field</button> 
+        </div>
+        </div>
+    </div>
+    <div class="team_player">
+        <div class="slot">2:</div>
+
+        <div class="team_player_info">
+            <label>Name</label>
+            <div class="player_name"><input name="attr_team_player2_name" title="" type="text" value="" /></div>
+            <label>Type</label>
+            <select name="attr_team_player2_type" class="type_select">
+                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+            </select>    
+        </div>
+          <input type="hidden" name="attr_gnome2_encode"></input>
+        <div class="team_player_abilities">
+        <div class="ability">
+            <label>Contact Roll</label>
+            <input name="attr_team_player2_contact" title="" type="text" value="" />
+            <button type="roll" value="!gbat @{gnome2_encode} @{team_player2_contact}" name="roll_contactCheck">Roll Contact</button> 
+        </div>
+
+        <div class="ability">
+            <label>Power Roll</label>
+            <input name="attr_team_player2_power" title="" type="text" value="" />
+            <button type="roll" value="!gpower @{gnome2_encode} @{team_player2_power}" name="roll_contactCheck">Roll Power</button> 
+        </div>
+
+        <div class="ability">
+            <label>Field Roll</label>
+            <input name="attr_team_player2_field" title="" type="text" value="" />
+             <!--<input name="attr_team_player2_gb" title="" type="text" value="" />-->
+             
+            <button type="roll" value="!gfield @{gnome2_encode} @{team_player2_field}" name="roll_contactCheck">Roll Field</button> 
+        </div>
+        </div>
+    </div>
+    <div class="team_player">
+        <div class="slot">3:</div>
+
+        <div class="team_player_info">
+            <label>Name</label>
+            <div class="player_name"><input name="attr_team_player3_name" title="" type="text" value="" /></div>
+            <label>Type</label>
+            <select name="attr_team_player3_type" class="type_select">
+                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+            </select>    
+        </div>
+          <input type="hidden" name="attr_gnome3_encode"></input>
+        <div class="team_player_abilities">
+        <div class="ability">
+            <label>Contact Roll</label>
+            <input name="attr_team_player3_contact" title="" type="text" value="" />
+            <button type="roll" value="!gbat @{gnome3_encode}  @{team_player3_contact}" name="roll_contactCheck">Roll Contact</button> 
+        </div>
+
+        <div class="ability">
+            <label>Power Roll</label>
+            <input name="attr_team_player3_power" title="" type="text" value="" />
+            <button type="roll" value="!gpower @{gnome3_encode}  @{team_player3_power}" name="roll_contactCheck">Roll Power</button> 
+        </div>
+
+        <div class="ability">
+            <label>Field Roll</label>
+            <input name="attr_team_player3_field" title="" type="text" value="" />
+             <!--<input name="attr_team_player3_gb" title="" type="text" value="" />-->
+            <button type="roll" value="!gfield @{gnome3_encode}  @{team_player3_field}" name="roll_contactCheck">Roll Field</button> 
+        </div>
+
+        </div>
+    </div>
+
+    <div class="team_player">
+        <div class="slot">4:</div>
+
+        <div class="team_player_info">
+            <label>Name</label>
+            <div class="player_name"><input name="attr_team_player4_name" title="" type="text" value="" /></div>
+            <label>Type</label>
+            <select name="attr_team_player4_type" class="type_select">
+                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+            </select>    
+        </div>
+        <input type="hidden" name="attr_gnome4_encode"></input>
+        <div class="team_player_abilities">
+        <div class="ability">
+            <label>Contact Roll</label>
+            <input name="attr_team_player4_contact" title="" type="text" value="" />
+            <button type="roll" value="!gbat @{gnome4_encode}  @{team_player4_contact}" name="roll_contactCheck">Roll Contact</button> 
+        </div>
+
+        <div class="ability">
+            <label>Power Roll</label>
+            <input name="attr_team_player4_power" title="" type="text" value="" />
+            <button type="roll" value="!gpower @{gnome4_encode}  @{team_player4_power}" name="roll_contactCheck">Roll Power</button> 
+        </div>
+
+        <div class="ability">
+            <label>Field Roll</label>
+            <input name="attr_team_player4_field" title="" type="text" value="" />
+             <!--<input name="attr_team_player4_gb" title="" type="text" value="" />-->
+            <button type="roll" value="!gfield @{gnome4_encode}  @{team_player4_field}" name="roll_contactCheck">Roll Fielding</button> 
+        </div>
+        
+        </div>
+    </div>
+            <label>Team Pitcher</label>
+            <div class="player_name"><input name="attr_team_pitcher" title="" type="text" value="" /></div>
+</div>
+
+<br>
+<h2>Pitches</h2>
+<div class="pitches">
+   
+    <div class="pitch_loadout">
+    <input type="hidden" class="player_type_selection" name="attr_type_selection"></input>
+    <div class="pitch">
+        <div class="slot">1:</div>
+        <div>
+            <div >
+                <select name="attr_pitch_1_select">
+                    <option>
+                        Fastball
+                    </option>
+                    <option>
+                        Sinker
+                    </option>
+                    <option>
+                        Knuckleball
+                    </option>
+                    <option>
+                        Changeup
+                    </option>
+                    <option>
+                        Splitter
+                    </option>
+                    <option>
+                        Curveball
+                    </option>
+                    <option>
+                        Screwball
+                    </option>
+                    <option>
+                        Spitball
+                    </option>
+                    <option>
+                        Meatpitch
+                    </option>
+                    <option>
+                        Eephus
+                    </option>
+                </select>
+            </div>
+        <div >
+            <select name="attr_pitch_1_level">
+                <option>
+                    1
+                </option>
+                <option>
+                    2
+                </option>
+                <option>
+                    3
+                </option>
+                <option>
+                    4
+                </option>
+                <option>
+                    5
+                </option>
+                <option>
+                    6
+                </option>
+            </select>
+        </div>
+        <div class="pitch_1_descriptions">
+            <input type="hidden" class="pitch1" name="attr_pitch_1_selection"></input>
+            <span class="pitch_desc Fastball1">4d6</span>
+            <span class="pitch_desc Fastball2">5d6</span>
+            <span class="pitch_desc Fastball3">6d6</span>
+            <span class="pitch_desc Fastball4">7d6</span>
+            <span class="pitch_desc Fastball5">8d6</span>
+            <span class="pitch_desc Fastball6">9d6</span>
+
+            <span class="pitch_desc Sinker1">6d4</span>
+            <span class="pitch_desc Sinker2">7d4</span>
+            <span class="pitch_desc Sinker3">8d4</span>
+            <span class="pitch_desc Sinker4">9d4</span>
+            <span class="pitch_desc Sinker5">10d4</span>
+            <span class="pitch_desc Sinker6">11d4</span>
+
+            <span class="pitch_desc Knuckleball1">1d100 -15</span>
+            <span class="pitch_desc Knuckleball2">1d100 -11</span>
+            <span class="pitch_desc Knuckleball3">1d100 -7</span>
+            <span class="pitch_desc Knuckleball4">1d100 -3</span>
+            <span class="pitch_desc Knuckleball5">1d100 +1</span>
+            <span class="pitch_desc Knuckleball6">1d100 +5</span>
+
+            <span class="pitch_desc Changeup1">3d4 + bonus</span>
+            <span class="pitch_desc Changeup2">4d4 + bonus</span>
+            <span class="pitch_desc Changeup3">5d4 + bonus</span>
+            <span class="pitch_desc Changeup4">6d4 + bonus</span>
+            <span class="pitch_desc Changeup5">7d4 + bonus</span>
+            <span class="pitch_desc Changeup6">8d4 + bonus</span>
+
+            <span class="pitch_desc Splitter1">2d20</span>
+            <span class="pitch_desc Splitter2">2d20 + d2</span>
+            <span class="pitch_desc Splitter3">2d20 + 2d2</span>
+            <span class="pitch_desc Splitter4">2d20 + 3d2</span>
+            <span class="pitch_desc Splitter5">2d20 + 4d2</span>
+            <span class="pitch_desc Splitter6">2d20 + 5d2</span>
+
+            <span class="pitch_desc Curveball1">3d10</span>
+            <span class="pitch_desc Curveball2">3d10 + 1d6</span>
+            <span class="pitch_desc Curveball3">3d10 + 2d6</span>
+            <span class="pitch_desc Curveball4">3d10 + 3d6</span>
+            <span class="pitch_desc Curveball5">3d10 + 4d6</span>
+            <span class="pitch_desc Curveball6">3d10 + 5d6</span>
+
+            <span class="pitch_desc Screwball1">1d20</span>
+            <span class="pitch_desc Screwball2">2d20 + 1d10</span>
+            <span class="pitch_desc Screwball3">2d20 + 2d10</span>
+            <span class="pitch_desc Screwball4">2d20 + 3d10</span>
+            <span class="pitch_desc Screwball5">2d20 + 4d10</span>
+            <span class="pitch_desc Screwball6">2d20 + 5d10</span>
+
+            <span class="pitch_desc Spitball1">3d10</span>
+            <span class="pitch_desc Spitball2">4d10</span>
+            <span class="pitch_desc Spitball3">5d10</span>
+            <span class="pitch_desc Spitball4">6d10</span>
+            <span class="pitch_desc Spitball5">7d10</span>
+            <span class="pitch_desc Spitball6">8d10</span>
+
+            <span class="pitch_desc MeatPitch1">3d4</span>
+            <span class="pitch_desc MeatPitch2">4d4</span>
+            <span class="pitch_desc MeatPitch3">5d4</span>
+            <span class="pitch_desc MeatPitch4">6d4</span>
+            <span class="pitch_desc MeatPitch5">7d4</span>
+            <span class="pitch_desc MeatPitch6">8d4</span>
+
+            <span class="pitch_desc Eephus1">1d100 -50</span>
+            <span class="pitch_desc Eephus2">1d100 -49</span>
+            <span class="pitch_desc Eephus3">1d100 -48</span>
+            <span class="pitch_desc Eephus4">1d100 -47</span>
+            <span class="pitch_desc Eephus5">1d100 -46</span>
+            <span class="pitch_desc Eephus6">1d100 -45</span>
+
+
+        </div>
+        <button type="roll" value="!gpitch @{gnome_encode} @{pitch_1_select} @{pitch_1_level}" name="roll_BluffCheck">Roll Pitch</button>
+        </div>
+
+    </div>
+    <div class="pitch hurler">
+
+        <div class="slot">2:</div>
+        <div>
+        <div>
+            <select name="attr_pitch_2_select">
+                <option>
+                    Fastball
+                </option>
+                <option>
+                    Sinker
+                </option>
+                <option>
+                    Knuckleball
+                </option>
+                <option>
+                    Changeup
+                </option>
+                <option>
+                    Splitter
+                </option>
+                <option>
+                    Curveball
+                </option>
+                <option>
+                    Screwball
+                </option>
+                <option>
+                    Spitball
+                </option>
+                <option>
+                    Meatpitch
+                </option>
+                <option>
+                    Eephus
+                </option>
+            </select>
+        </div>
+        <div >
+            <select name="attr_pitch_2_level">
+                <option>
+                    1
+                </option>
+                <option>
+                    2
+                </option>
+                <option>
+                    3
+                </option>
+                <option>
+                    4
+                </option>
+                <option>
+                    5
+                </option>
+                <option>
+                    6
+                </option>
+            </select>
+        </div>
+        <div class="pitch_2_descriptions">
+            <input type="hidden" class="pitch2" name="attr_pitch_2_selection"></input>
+            <span class="pitch_desc Fastball1">4d6</span>
+            <span class="pitch_desc Fastball2">5d6</span>
+            <span class="pitch_desc Fastball3">6d6</span>
+            <span class="pitch_desc Fastball4">7d6</span>
+            <span class="pitch_desc Fastball5">8d6</span>
+            <span class="pitch_desc Fastball6">9d6</span>
+
+            <span class="pitch_desc Sinker1">6d4</span>
+            <span class="pitch_desc Sinker2">7d4</span>
+            <span class="pitch_desc Sinker3">8d4</span>
+            <span class="pitch_desc Sinker4">9d4</span>
+            <span class="pitch_desc Sinker5">10d4</span>
+            <span class="pitch_desc Sinker6">11d4</span>
+
+            <span class="pitch_desc Knuckleball1">1d100 -15</span>
+            <span class="pitch_desc Knuckleball2">1d100 -11</span>
+            <span class="pitch_desc Knuckleball3">1d100 -7</span>
+            <span class="pitch_desc Knuckleball4">1d100 -3</span>
+            <span class="pitch_desc Knuckleball5">1d100 +1</span>
+            <span class="pitch_desc Knuckleball6">1d100 +5</span>
+
+            <span class="pitch_desc Changeup1">3d4 + bonus</span>
+            <span class="pitch_desc Changeup2">4d4 + bonus</span>
+            <span class="pitch_desc Changeup3">5d4 + bonus</span>
+            <span class="pitch_desc Changeup4">6d4 + bonus</span>
+            <span class="pitch_desc Changeup5">7d4 + bonus</span>
+            <span class="pitch_desc Changeup6">8d4 + bonus</span>
+
+            <span class="pitch_desc Splitter1">2d20</span>
+            <span class="pitch_desc Splitter2">2d20 + d2</span>
+            <span class="pitch_desc Splitter3">2d20 + 2d2</span>
+            <span class="pitch_desc Splitter4">2d20 + 3d2</span>
+            <span class="pitch_desc Splitter5">2d20 + 4d2</span>
+            <span class="pitch_desc Splitter6">2d20 + 5d2</span>
+
+            <span class="pitch_desc Curveball1">3d10</span>
+            <span class="pitch_desc Curveball2">3d10 + 1d6</span>
+            <span class="pitch_desc Curveball3">3d10 + 2d6</span>
+            <span class="pitch_desc Curveball4">3d10 + 3d6</span>
+            <span class="pitch_desc Curveball5">3d10 + 4d6</span>
+            <span class="pitch_desc Curveball6">3d10 + 5d6</span>
+
+            <span class="pitch_desc Screwball1">1d20</span>
+            <span class="pitch_desc Screwball2">2d20 + 1d10</span>
+            <span class="pitch_desc Screwball3">2d20 + 2d10</span>
+            <span class="pitch_desc Screwball4">2d20 + 3d10</span>
+            <span class="pitch_desc Screwball5">2d20 + 4d10</span>
+            <span class="pitch_desc Screwball6">2d20 + 5d10</span>
+
+            <span class="pitch_desc Spitball1">3d10</span>
+            <span class="pitch_desc Spitball2">4d10</span>
+            <span class="pitch_desc Spitball3">5d10</span>
+            <span class="pitch_desc Spitball4">6d10</span>
+            <span class="pitch_desc Spitball5">7d10</span>
+            <span class="pitch_desc Spitball6">8d10</span>
+
+            <span class="pitch_desc MeatPitch1">3d4</span>
+            <span class="pitch_desc MeatPitch2">4d4</span>
+            <span class="pitch_desc MeatPitch3">5d4</span>
+            <span class="pitch_desc MeatPitch4">6d4</span>
+            <span class="pitch_desc MeatPitch5">7d4</span>
+            <span class="pitch_desc MeatPitch6">8d4</span>
+
+            <span class="pitch_desc Eephus1">1d100 -50</span>
+            <span class="pitch_desc Eephus2">1d100 -49</span>
+            <span class="pitch_desc Eephus3">1d100 -48</span>
+            <span class="pitch_desc Eephus4">1d100 -47</span>
+            <span class="pitch_desc Eephus5">1d100 -46</span>
+            <span class="pitch_desc Eephus6">1d100 -45</span>
+
+
+        </div>
+        <button type="roll" value="!gpitch @{gnome_encode} @{pitch_2_select} @{pitch_2_level}" name="roll_BluffCheck">Roll Pitch</button>
+    </div>
+    </div>
+    <div class="pitch hurler">
+        <div class="slot">3:</div><div>
+        <div >
+            <select name="attr_pitch_3_select">
+                <option>
+                    Fastball
+                </option>
+                <option>
+                    Sinker
+                </option>
+                <option>
+                    Knuckleball
+                </option>
+                <option>
+                    Changeup
+                </option>
+                <option>
+                    Splitter
+                </option>
+                <option>
+                    Curveball
+                </option>
+                <option>
+                    Screwball
+                </option>
+                <option>
+                    Spitball
+                </option>
+                <option>
+                    Meatpitch
+                </option>
+                <option>
+                    Eephus
+                </option>
+            </select>
+        </div>
+        <div >
+            <select name="attr_pitch_3_level">
+                <option>
+                    1
+                </option>
+                <option>
+                    2
+                </option>
+                <option>
+                    3
+                </option>
+                <option>
+                    4
+                </option>
+                <option>
+                    5
+                </option>
+                <option>
+                    6
+                </option>
+            </select>
+        </div>
+        <div class="pitch_3_descriptions">
+            <input type="hidden" class="pitch3" name="attr_pitch_3_selection"></input>
+            <span class="pitch_desc Fastball1">4d6</span>
+            <span class="pitch_desc Fastball2">5d6</span>
+            <span class="pitch_desc Fastball3">6d6</span>
+            <span class="pitch_desc Fastball4">7d6</span>
+            <span class="pitch_desc Fastball5">8d6</span>
+            <span class="pitch_desc Fastball6">9d6</span>
+
+            <span class="pitch_desc Sinker1">6d4</span>
+            <span class="pitch_desc Sinker2">7d4</span>
+            <span class="pitch_desc Sinker3">8d4</span>
+            <span class="pitch_desc Sinker4">9d4</span>
+            <span class="pitch_desc Sinker5">10d4</span>
+            <span class="pitch_desc Sinker6">11d4</span>
+
+            <span class="pitch_desc Knuckleball1">1d100 -15</span>
+            <span class="pitch_desc Knuckleball2">1d100 -11</span>
+            <span class="pitch_desc Knuckleball3">1d100 -7</span>
+            <span class="pitch_desc Knuckleball4">1d100 -3</span>
+            <span class="pitch_desc Knuckleball5">1d100 +1</span>
+            <span class="pitch_desc Knuckleball6">1d100 +5</span>
+
+            <span class="pitch_desc Changeup1">3d4 + bonus</span>
+            <span class="pitch_desc Changeup2">4d4 + bonus</span>
+            <span class="pitch_desc Changeup3">5d4 + bonus</span>
+            <span class="pitch_desc Changeup4">6d4 + bonus</span>
+            <span class="pitch_desc Changeup5">7d4 + bonus</span>
+            <span class="pitch_desc Changeup6">8d4 + bonus</span>
+
+            <span class="pitch_desc Splitter1">2d20</span>
+            <span class="pitch_desc Splitter2">2d20 + d2</span>
+            <span class="pitch_desc Splitter3">2d20 + 2d2</span>
+            <span class="pitch_desc Splitter4">2d20 + 3d2</span>
+            <span class="pitch_desc Splitter5">2d20 + 4d2</span>
+            <span class="pitch_desc Splitter6">2d20 + 5d2</span>
+
+            <span class="pitch_desc Curveball1">3d10</span>
+            <span class="pitch_desc Curveball2">3d10 + 1d6</span>
+            <span class="pitch_desc Curveball3">3d10 + 2d6</span>
+            <span class="pitch_desc Curveball4">3d10 + 3d6</span>
+            <span class="pitch_desc Curveball5">3d10 + 4d6</span>
+            <span class="pitch_desc Curveball6">3d10 + 5d6</span>
+
+            <span class="pitch_desc Screwball1">1d20</span>
+            <span class="pitch_desc Screwball2">2d20 + 1d10</span>
+            <span class="pitch_desc Screwball3">2d20 + 2d10</span>
+            <span class="pitch_desc Screwball4">2d20 + 3d10</span>
+            <span class="pitch_desc Screwball5">2d20 + 4d10</span>
+            <span class="pitch_desc Screwball6">2d20 + 5d10</span>
+
+            <span class="pitch_desc Spitball1">3d10</span>
+            <span class="pitch_desc Spitball2">4d10</span>
+            <span class="pitch_desc Spitball3">5d10</span>
+            <span class="pitch_desc Spitball4">6d10</span>
+            <span class="pitch_desc Spitball5">7d10</span>
+            <span class="pitch_desc Spitball6">8d10</span>
+
+            <span class="pitch_desc MeatPitch1">3d4</span>
+            <span class="pitch_desc MeatPitch2">4d4</span>
+            <span class="pitch_desc MeatPitch3">5d4</span>
+            <span class="pitch_desc MeatPitch4">6d4</span>
+            <span class="pitch_desc MeatPitch5">7d4</span>
+            <span class="pitch_desc MeatPitch6">8d4</span>
+
+            <span class="pitch_desc Eephus1">1d100 -50</span>
+            <span class="pitch_desc Eephus2">1d100 -49</span>
+            <span class="pitch_desc Eephus3">1d100 -48</span>
+            <span class="pitch_desc Eephus4">1d100 -47</span>
+            <span class="pitch_desc Eephus5">1d100 -46</span>
+            <span class="pitch_desc Eephus6">1d100 -45</span>
+
+
+        </div>
+        <button type="roll" value="!gpitch @{gnome_encode}  @{pitch_3_select} @{pitch_3_level}" name="roll_BluffCheck">Roll Pitch</button>
+    </div>
+    </div>
+    </div>
+    <div class="pitches_desc">
+        <input type="hidden" class="pitches" name="attr_pitch_selections"></input>
+         <div class="fastball_desc pitch_desc">
+             <h3>Fastball</h3>
+            A steady pitch that will improve at a pace similar to the scrapper and pitcher’s batting ability. Fatty’s will eventually crush it.
+        </div>
+
+         <div class="sinker_desc pitch_desc">
+            <h3>Sinker</h3>
+            A variation of the fastball,this pitch becomes extremely hittable at higher levelsbut it triggers agroundball bonus for the fielding save.
+        </div>
+         <div class="splitter_desc pitch_desc">
+            <h3>Splitter (limited, 1 per inning)</h3>
+            The forkball is a filthy good pitch on opening day, butby the end of theseason most good batters have figured it out and most good pitchers have stopped throwing it.
+        </div>
+         <div class="knuckleball_desc pitch_desc">
+            <h3>Knuckleball</h3>
+            This pitch hasthe most variability in quality. It is usually very difficult to hit, but when contact does happen, it triggers the regular  power roll as well as a special d2 for the batter; this special roll is separate scoring and cannot be prevented by fielding, even if the fielder reduces the regular powerto zero and records an out.Additionally, possessing a knuckleball stunts the growth of the other pitches, with neither being allowed to improve per level.
+        </div>
+         <div class="screwball_desc pitch_desc">
+            <h3>Screwball (limited, 1 per inning)</h3>
+            Not much is known about this reverse curveball. Perhaps some brave gnome will spend a career mastering it.
+        </div>
+         <div class="spitball_desc pitch_desc">
+            <h3>Spitball (limited, ump check)</h3>
+
+         Must pass umpire inspection( d4 AC 4)after each successful quality roll; if it fails inspection, it is suspended for the game; after twosuspensionsit is lost for the season andthe pitcher must replace it with a Level 1 pitch)—The shineball is illegal for a reason. It killed a gnome in the only on-field death the sport has known. It’s also gross. But holy hell, it’s unhittable.If winning’sall that matters to you, lubeup!
+        </div>
+         <div class="meatpitch_desc pitch_desc">
+            <h3>Meatpitch</h3>
+            This is a batting practice fastball at best. When contact does happen, it triggers the regular powerroll as well as aspeciald6for Fatties, d4for Scrappers, andd2 for Hurlers; this specialroll is separate scoringand cannot be prevented by fielding, evenif the fielder reduces the regular powerroll to zeroand records an out.
+        </div>
+         <div class="eephus_desc pitch_desc">
+            <h3>Eephus</h3>
+            This novelty pitch is a fan favorite, both for its majestically looping arc over the plate, and for its laser beam trajectory over the wall. When contact does happen, it triggers theregularpowerrollas well as aspeciald6for Fatties, d4for Scrappers, and d2 for Hurlers; this special roll is separate scoring and cannot be prevented by fielding, even if the fielder reduces the regular powerroll to zero and records an out.
+        </div>
+        <div class="curveball_desc pitch_desc">
+
+            <h3>Curveball (limited, 1 per inning)</h3>
+            The Hook. The Deuce. Uncle Charlie. The ol’Snapdragon! This is the pitch that’s ruining the sport. But is it here to stay?
+        </div>
+        <div class="changeup_desc pitch_desc">
+            <h3>Changeup (limited, follows fastball/sinker)</h3>
+            The off-speed pitch has a relatively weak initial roll, but as a bonus addshalf the value of the previous pitch’s quality roll.
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="notes">
+    <h2>Notes</h2>
+    <textarea name="attr_player_notes">
+        </textarea>
+</div>
+
+
+<!-- <button type="roll" value="!gpitch fastball 1" name="roll_BluffCheck">Roll Pitch</button> -->
+<label></label>
+<script type="text/worker">
+
+  function updateSelections() {
+        getAttrs(['pitch_1_select','pitch_2_select','pitch_3_select'], (value) => {
+            console.log(value.pitch_1_select + value.pitch_1_level);
+            setAttrs({
+                'pitch_selections' : value.pitch_1_select +' ' + value.pitch_2_select + ' ' + value.pitch_3_select
+                  });
+          });
+    }
+
+    on('change:pitch_1_select change:pitch_1_level', function(eventInfo) {
+        console.log("Pitch button clicked");
+  
+        getAttrs(['pitch_1_select', 'pitch_1_level'], (value) => {
+          console.log(value.pitch_1_select + value.pitch_1_level);
+          setAttrs({'pitch_1_selection': value.pitch_1_select+value.pitch_1_level });
+          updateSelections();
+        });
+  
+      });
+
+      on('change:pitch_2_select change:pitch_2_level', function(eventInfo) {
+        console.log("Pitch button clicked");
+  
+        getAttrs(['pitch_2_select', 'pitch_2_level'], (value) => {
+          console.log(value.pitch_2_select + value.pitch_2_level);
+          setAttrs({'pitch_2_selection': value.pitch_2_select+value.pitch_2_level });
+          updateSelections();
+        
+        });
+  
+      });
+
+
+      on('change:pitch_3_select change:pitch_3_level', function(eventInfo) {
+  
+        getAttrs(['pitch_3_select', 'pitch_3_level'], (value) => {
+          console.log(value.pitch_3_select + value.pitch_3_level);
+          setAttrs({'pitch_3_selection': value.pitch_3_select+value.pitch_3_level });
+          updateSelections();
+        });
+  
+      });
+      
+      on('change:gnome_name', function(eventInfo) {
+          getAttrs(['player_type','gnome_name'], (value) => {
+             setAttrs({'gnome_encode':btoa( value.gnome_name +"|"+value.player_type) });
+          });
+
+      });
+      
+    on("change:attr_team_player1_type change:attr_team_player2_type change:attr_team_player3_type change:attr_team_player4_type change:attr_team_player1_name  change:attr_team_player2_name change:attr_team_player3_name change:attr_team_player4_name", function(eventInfo){
+           console.log("Change");
+        getAttrs(['team_player1_type','team_player2_type','team_player3_type','team_player4_type','team_player1_name','team_player2_type','team_player3_type','team_player4_type'], (value) => {
+            setAttrs({'gnome1_encode':btoa( value.team_player1_name +"|"+value.team_player1_type) });
+            setAttrs({'gnome2_encode':btoa( value.team_player2_name +"|"+value.team_player2_type) });
+            setAttrs({'gnome3_encode':btoa( value.team_player3_name +"|"+value.team_player3_type) });
+            setAttrs({'gnome4_encode':btoa( value.team_player4_name +"|"+value.team_player4_type) });
+        });
+
+        
+        
+        
+    });
+
+
+    on("change:player_type", function(eventInfo) {
+      console.log("Activate button clicked");
+ 
+      getAttrs(['player_type','gnome_name'], (value) => {
+        console.log(value.player_type);
+        if(value.player_type === "Fattie")
+        {
+            console.log("fat");
+            setAttrs({'type_selection':value.player_type, 'pitch_1_select':'Meatpitch','pitch_2_select':'Meatpitch','pitch_3_select':'Meatpitch'});
+        } else if ( value.player_type === "Scrapper") {
+            console.log("scrap");
+            setAttrs({'type_selection':value.player_type, 'pitch_1_select':'Eephus','pitch_selections':'Eephus','pitch_2_select':'Eephus','pitch_3_select':'Eephus'});
+        } else {
+            console.log("hurl");
+            setAttrs({'type_selection':value.player_type});
+        }
+        
+        setAttrs({'gnome_encode':btoa( value.gnome_name +"|"+value.player_type) });
+
+        
+
+      });
+
+    });
+
+
+   
+</script>

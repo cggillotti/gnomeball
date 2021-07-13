@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two:ital,wght@1,400;1,700&display=swap');
+h1 {
+font-family: 'Lobster Two', cursive;
+font-size:8rem;
+}
+
+.inline label{
+    display: inline;
+}   
+
+.pitch {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    margin-bottom: 2rem;
+    border-bottom: 1px brown dashed;
+    padding: 1rem 0;
+}
+
+
+
+
+.slot {
+    font-size: 8rem;
+}
+
+.abilities {
+    border: 2px brown dotted;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: 'Lobster Two';
+    font-size:1.2rem;
+}
+
+.abilities label {
+    font-family: 'Lobster Two', cursive;
+    font-size:2rem;
+}
+
+.inline {
+    margin: 1rem 0;
+}
+
+h2 {
+    font-family: 'Lobster Two', cursive;
+    font-size:2rem;
+    }
+
+.gnome_name {
+    font-family: 'Lobster Two';
+    font-size:2rem;
+    height: 4rem;
+    width: 400px;
+}
+.pitches {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2rem;;
+}
+
+
+.type_select {
+    font-family: 'Lobster Two';
+    font-size:2rem;
+    height: 4rem;
+}
+
+.player_info {
+    border: 2px dodgerblue dotted;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: 'Lobster Two';
+    font-size:1.2rem;
+    
+}
+
+.level {
+    font-family: 'Lobster Two', cursive;
+    font-size: 3rem;
+}
+
+.hurler {
+    display: none;
+}
+
+.team_roster {
+    display: none;
+}
+
+.double,
+.triple,
+.gb {
+    display:none;
+}
+
+input.player_type_selection[value~="Team"] ~ .hurler,
+input.player_type_selection[value~="Hurler"] ~ .hurler {
+    display: grid;
+}
+
+input.player_type_selection[value~="Team"] ~ .ability {
+    display: none;
+}
+
+input.player_type_selection[value~="Team"] ~ .team_roster {
+    display: block;
+}
+
+input.defense_skills[value~="GB"] ~ .gb {
+    display:unset;
+}
+
+input.defense_skills[value~="Doubleplay"] ~ .double {
+    display:unset;
+}
+
+input.defense_skills[value~="Tripleplay"] ~ .triple {
+    display:unset;
+}
+
+.team_player {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.5fr;
+    align-items: center;
+    justify-items: start;
+    border-bottom: dotted brown 1px;
+}
+
+.team_player_info input {
+    margin-bottom: 2rem;
+}
+
+.slot,
+.team_player_info,
+.team_player_abilities {
+    grid-column: span 1;
+    display: inline-grid;
+}
+
+
+.pitch_desc {
+    display:none;
+    margin:1rem;
+    margin-left:0;
+}
+.pitch_1_descriptions,
+.pitch_2_descriptions,
+.pitch_3_descriptions {
+
+    font-weight: 600;
+    font-size: 2rem;
+    align-self: center;
+}
+
+
+.ability {
+    margin: 2rem 0;
+}
+
+input.pitches[value~="Fastball"] ~ .fastball_desc {
+    display:block;
+}
+
+input.pitches[value~="Changeup"] ~ .changeup_desc {
+    display:block;
+}
+
+input.pitches[value~="Sinker"] ~ .sinker_desc {
+    display:block;
+}
+
+input.pitches[value~="Splitter"] ~ .splitter_desc {
+    display:block;
+}
+
+input.pitches[value~="Knuckleball"] ~ .knuckleball_desc {
+    display:block;
+}
+
+input.pitches[value~="Curveball"] ~ .curveball_desc {
+    display:block;
+}
+
+
+input.pitches[value~="Screwball"] ~ .screwball_desc {
+    display:block;
+}
+
+input.pitches[value~="Spitball"] ~ .spitball_desc {
+    display:block;
+}
+
+input.pitches[value~="Meatpitch"] ~ .meatpitch_desc {
+    display:block;
+}
+input.pitches[value~="Eephus"] ~ .eephus_desc {
+    display:block;
+}
+
+
+/* 
+Pitch block one */
+input.pitch1[value~="Fastball1"] ~ .Fastball1 {
+    display:block;
+}
+input.pitch1[value~="Fastball2"] ~ .Fastball2 {
+    display:block;
+}
+input.pitch1[value~="Fastball3"] ~ .Fastball3 {
+    display:block;
+}
+input.pitch1[value~="Fastball4"] ~ .Fastball4 {
+    display:block;
+}
+input.pitch1[value~="Fastball5"] ~ .Fastball5 {
+    display:block;
+}
+input.pitch1[value~="Fastball6"] ~ .Fastball6 {
+    display:block;
+}
+
+input.pitch1[value~="Sinker1"] ~ .Sinker1 {
+    display:block;
+}
+input.pitch1[value~="Sinker2"] ~ .Sinker2 {
+    display:block;
+}
+input.pitch1[value~="Sinker3"] ~ .Sinker3 {
+    display:block;
+}
+input.pitch1[value~="Sinker4"] ~ .Sinker4 {
+    display:block;
+}
+input.pitch1[value~="Sinker5"] ~ .Sinker5 {
+    display:block;
+}
+input.pitch1[value~="Sinker6"] ~ .Sinker6 {
+    display:block;
+}
+
+input.pitch1[value~="Splitter1"] ~ .Splitter1 {
+    display:block;
+}
+input.pitch1[value~="Splitter2"] ~ .Splitter2 {
+    display:block;
+}
+input.pitch1[value~="Splitter3"] ~ .Splitter3 {
+    display:block;
+}
+input.pitch1[value~="Splitter4"] ~ .Splitter4 {
+    display:block;
+}
+input.pitch1[value~="Splitter5"] ~ .Splitter5 {
+    display:block;
+}
+input.pitch1[value~="Splitter6"] ~ .Splitter6 {
+    display:block;
+}
+
+input.pitch1[value~="Knuckleball1"] ~ .Knuckleball1 {
+    display:block;
+}
+input.pitch1[value~="Knuckleball2"] ~ .Knuckleball2 {
+    display:block;
+}
+input.pitch1[value~="Knuckleball3"] ~ .Knuckleball3 {
+    display:block;
+}
+input.pitch1[value~="Knuckleball4"] ~ .Knuckleball4 {
+    display:block;
+}
+input.pitch1[value~="Knuckleball5"] ~ .Knuckleball5 {
+    display:block;
+}
+input.pitch1[value~="Knuckleball6"] ~ .Knuckleball6 {
+    display:block;
+}
+
+input.pitch1[value~="Screwball1"] ~ .Screwball1 {
+    display:block;
+}
+input.pitch1[value~="Screwball2"] ~ .Screwball2 {
+    display:block;
+}
+input.pitch1[value~="Screwball3"] ~ .Screwball3 {
+    display:block;
+}
+input.pitch1[value~="Screwball4"] ~ .Screwball4 {
+    display:block;
+}
+input.pitch1[value~="Screwball5"] ~ .Screwball5 {
+    display:block;
+}
+input.pitch1[value~="Screwball6"] ~ .Screwball6 {
+    display:block;
+}
+
+input.pitch1[value~="Spitball1"] ~ .Spitball1 {
+    display:block;
+}
+input.pitch1[value~="Spitball2"] ~ .Spitball2 {
+    display:block;
+}
+input.pitch1[value~="Spitball3"] ~ .Spitball3 {
+    display:block;
+}
+input.pitch1[value~="Spitball4"] ~ .Spitball4 {
+    display:block;
+}
+input.pitch1[value~="Spitball5"] ~ .Spitball5 {
+    display:block;
+}
+input.pitch1[value~="Spitball6"] ~ .Spitball6 {
+    display:block;
+}
+
+input.pitch1[value~="Meatpitch1"] ~ .Meatpitch1 {
+    display:block;
+}
+input.pitch1[value~="Meatpitch2"] ~ .Meatpitch2 {
+    display:block;
+}
+input.pitch1[value~="Meatpitch3"] ~ .Meatpitch3 {
+    display:block;
+}
+input.pitch1[value~="Meatpitch4"] ~ .Meatpitch4 {
+    display:block;
+}
+input.pitch1[value~="Meatpitch5"] ~ .Meatpitch5 {
+    display:block;
+}
+input.pitch1[value~="Meatpitch6"] ~ .Meatpitch6 {
+    display:block;
+}
+
+input.pitch1[value~="Eephus1"] ~ .Eephus1 {
+    display:block;
+}
+input.pitch1[value~="Eephus2"] ~ .Eephus2 {
+    display:block;
+}
+input.pitch1[value~="Eephus3"] ~ .Eephus3 {
+    display:block;
+}
+input.pitch1[value~="Eephus4"] ~ .Eephus4 {
+    display:block;
+}
+input.pitch1[value~="Eephus5"] ~ .Eephus5 {
+    display:block;
+}
+input.pitch1[value~="Eephus6"] ~ .Eephus6 {
+    display:block;
+}
+
+input.pitch1[value~="Curveball1"] ~ .Curveball1 {
+    display:block;
+}
+input.pitch1[value~="Curveball2"] ~ .Curveball2 {
+    display:block;
+}
+input.pitch1[value~="Curveball3"] ~ .Curveball3 {
+    display:block;
+}
+input.pitch1[value~="Curveball4"] ~ .Curveball4 {
+    display:block;
+}
+input.pitch1[value~="Curveball5"] ~ .Curveball5 {
+    display:block;
+}
+input.pitch1[value~="Curveball6"] ~ .Curveball6 {
+    display:block;
+}
+
+
+input.pitch1[value~="Changeup1"] ~ .Changeup1 {
+    display:block;
+}
+input.pitch1[value~="Changeup2"] ~ .Changeup2 {
+    display:block;
+}
+input.pitch1[value~="Changeup3"] ~ .Changeup3 {
+    display:block;
+}
+input.pitch1[value~="Changeup4"] ~ .Changeup4 {
+    display:block;
+}
+input.pitch1[value~="Changeup5"] ~ .Changeup5 {
+    display:block;
+}
+input.pitch1[value~="Changeup6"] ~ .Changeup6 {
+    display:block;
+}
+
+
+
+
+
+
+
+/* 
+Pitch block one */
+input.pitch2[value~="Fastball1"] ~ .Fastball1 {
+    display:block;
+}
+input.pitch2[value~="Fastball2"] ~ .Fastball2 {
+    display:block;
+}
+input.pitch2[value~="Fastball3"] ~ .Fastball3 {
+    display:block;
+}
+input.pitch2[value~="Fastball4"] ~ .Fastball4 {
+    display:block;
+}
+input.pitch2[value~="Fastball5"] ~ .Fastball5 {
+    display:block;
+}
+input.pitch2[value~="Fastball6"] ~ .Fastball6 {
+    display:block;
+}
+
+input.pitch2[value~="Sinker1"] ~ .Sinker1 {
+    display:block;
+}
+input.pitch2[value~="Sinker2"] ~ .Sinker2 {
+    display:block;
+}
+input.pitch2[value~="Sinker3"] ~ .Sinker3 {
+    display:block;
+}
+input.pitch2[value~="Sinker4"] ~ .Sinker4 {
+    display:block;
+}
+input.pitch2[value~="Sinker5"] ~ .Sinker5 {
+    display:block;
+}
+input.pitch2[value~="Sinker6"] ~ .Sinker6 {
+    display:block;
+}
+
+input.pitch2[value~="Splitter1"] ~ .Splitter1 {
+    display:block;
+}
+input.pitch2[value~="Splitter2"] ~ .Splitter2 {
+    display:block;
+}
+input.pitch2[value~="Splitter3"] ~ .Splitter3 {
+    display:block;
+}
+input.pitch2[value~="Splitter4"] ~ .Splitter4 {
+    display:block;
+}
+input.pitch2[value~="Splitter5"] ~ .Splitter5 {
+    display:block;
+}
+input.pitch2[value~="Splitter6"] ~ .Splitter6 {
+    display:block;
+}
+
+input.pitch2[value~="Knuckleball1"] ~ .Knuckleball1 {
+    display:block;
+}
+input.pitch2[value~="Knuckleball2"] ~ .Knuckleball2 {
+    display:block;
+}
+input.pitch2[value~="Knuckleball3"] ~ .Knuckleball3 {
+    display:block;
+}
+input.pitch2[value~="Knuckleball4"] ~ .Knuckleball4 {
+    display:block;
+}
+input.pitch2[value~="Knuckleball5"] ~ .Knuckleball5 {
+    display:block;
+}
+input.pitch2[value~="Knuckleball6"] ~ .Knuckleball6 {
+    display:block;
+}
+
+input.pitch2[value~="Screwball1"] ~ .Screwball1 {
+    display:block;
+}
+input.pitch2[value~="Screwball2"] ~ .Screwball2 {
+    display:block;
+}
+input.pitch2[value~="Screwball3"] ~ .Screwball3 {
+    display:block;
+}
+input.pitch2[value~="Screwball4"] ~ .Screwball4 {
+    display:block;
+}
+input.pitch2[value~="Screwball5"] ~ .Screwball5 {
+    display:block;
+}
+input.pitch2[value~="Screwball6"] ~ .Screwball6 {
+    display:block;
+}
+
+input.pitch2[value~="Spitball1"] ~ .Spitball1 {
+    display:block;
+}
+input.pitch2[value~="Spitball2"] ~ .Spitball2 {
+    display:block;
+}
+input.pitch2[value~="Spitball3"] ~ .Spitball3 {
+    display:block;
+}
+input.pitch2[value~="Spitball4"] ~ .Spitball4 {
+    display:block;
+}
+input.pitch2[value~="Spitball5"] ~ .Spitball5 {
+    display:block;
+}
+input.pitch2[value~="Spitball6"] ~ .Spitball6 {
+    display:block;
+}
+
+input.pitch2[value~="Meatpitch2"] ~ .Meatpitch2 {
+    display:block;
+}
+input.pitch2[value~="Meatpitch2"] ~ .Meatpitch2 {
+    display:block;
+}
+input.pitch2[value~="Meatpitch3"] ~ .Meatpitch3 {
+    display:block;
+}
+input.pitch2[value~="Meatpitch4"] ~ .Meatpitch4 {
+    display:block;
+}
+input.pitch2[value~="Meatpitch5"] ~ .Meatpitch5 {
+    display:block;
+}
+input.pitch2[value~="Meatpitch6"] ~ .Meatpitch6 {
+    display:block;
+}
+
+input.pitch2[value~="Eephus1"] ~ .Eephus1 {
+    display:block;
+}
+input.pitch2[value~="Eephus2"] ~ .Eephus2 {
+    display:block;
+}
+input.pitch2[value~="Eephus3"] ~ .Eephus3 {
+    display:block;
+}
+input.pitch2[value~="Eephus4"] ~ .Eephus4 {
+    display:block;
+}
+input.pitch2[value~="Eephus5"] ~ .Eephus5 {
+    display:block;
+}
+input.pitch2[value~="Eephus6"] ~ .Eephus6 {
+    display:block;
+}
+
+
+input.pitch2[value~="Curveball1"] ~ .Curveball1 {
+    display:block;
+}
+input.pitch2[value~="Curveball2"] ~ .Curveball2 {
+    display:block;
+}
+input.pitch2[value~="Curveball3"] ~ .Curveball3 {
+    display:block;
+}
+input.pitch2[value~="Curveball4"] ~ .Curveball4 {
+    display:block;
+}
+input.pitch2[value~="Curveball5"] ~ .Curveball5 {
+    display:block;
+}
+input.pitch2[value~="Curveball6"] ~ .Curveball6 {
+    display:block;
+}
+
+
+input.pitch2[value~="Changeup1"] ~ .Changeup1 {
+    display:block;
+}
+input.pitch2[value~="Changeup2"] ~ .Changeup2 {
+    display:block;
+}
+input.pitch2[value~="Changeup3"] ~ .Changeup3 {
+    display:block;
+}
+input.pitch2[value~="Changeup4"] ~ .Changeup4 {
+    display:block;
+}
+input.pitch2[value~="Changeup5"] ~ .Changeup5 {
+    display:block;
+}
+input.pitch2[value~="Changeup6"] ~ .Changeup6 {
+    display:block;
+}
+
+
+
+
+
+
+/* 
+Pitch block one */
+input.pitch3[value~="Fastball1"] ~ .Fastball1 {
+    display:block;
+}
+input.pitch3[value~="Fastball2"] ~ .Fastball2 {
+    display:block;
+}
+input.pitch3[value~="Fastball3"] ~ .Fastball3 {
+    display:block;
+}
+input.pitch3[value~="Fastball4"] ~ .Fastball4 {
+    display:block;
+}
+input.pitch3[value~="Fastball5"] ~ .Fastball5 {
+    display:block;
+}
+input.pitch3[value~="Fastball6"] ~ .Fastball6 {
+    display:block;
+}
+
+input.pitch3[value~="Changeup1"] ~ .Changeup1 {
+    display:block;
+}
+input.pitch3[value~="Changeup2"] ~ .Changeup2 {
+    display:block;
+}
+input.pitch3[value~="Changeup3"] ~ .Changeup3 {
+    display:block;
+}
+input.pitch3[value~="Changeup4"] ~ .Changeup4 {
+    display:block;
+}
+input.pitch3[value~="Changeup5"] ~ .Changeup5 {
+    display:block;
+}
+input.pitch3[value~="Changeup6"] ~ .Changeup6 {
+    display:block;
+}
+
+input.pitch3[value~="Curveball1"] ~ .Curveball1 {
+    display:block;
+}
+input.pitch3[value~="Curveball2"] ~ .Curveball2 {
+    display:block;
+}
+input.pitch3[value~="Curveball3"] ~ .Curveball3 {
+    display:block;
+}
+input.pitch3[value~="Curveball4"] ~ .Curveball4 {
+    display:block;
+}
+input.pitch3[value~="Curveball5"] ~ .Curveball5 {
+    display:block;
+}
+input.pitch3[value~="Curveball6"] ~ .Curveball6 {
+    display:block;
+}
+
+input.pitch3[value~="Sinker1"] ~ .Sinker1 {
+    display:block;
+}
+input.pitch3[value~="Sinker2"] ~ .Sinker2 {
+    display:block;
+}
+input.pitch3[value~="Sinker3"] ~ .Sinker3 {
+    display:block;
+}
+input.pitch3[value~="Sinker4"] ~ .Sinker4 {
+    display:block;
+}
+input.pitch3[value~="Sinker5"] ~ .Sinker5 {
+    display:block;
+}
+input.pitch3[value~="Sinker6"] ~ .Sinker6 {
+    display:block;
+}
+
+input.pitch3[value~="Splitter1"] ~ .Splitter1 {
+    display:block;
+}
+input.pitch3[value~="Splitter2"] ~ .Splitter2 {
+    display:block;
+}
+input.pitch3[value~="Splitter3"] ~ .Splitter3 {
+    display:block;
+}
+input.pitch3[value~="Splitter4"] ~ .Splitter4 {
+    display:block;
+}
+input.pitch3[value~="Splitter5"] ~ .Splitter5 {
+    display:block;
+}
+input.pitch3[value~="Splitter6"] ~ .Splitter6 {
+    display:block;
+}
+
+input.pitch3[value~="Knuckleball1"] ~ .Knuckleball1 {
+    display:block;
+}
+input.pitch3[value~="Knuckleball2"] ~ .Knuckleball2 {
+    display:block;
+}
+input.pitch3[value~="Knuckleball3"] ~ .Knuckleball3 {
+    display:block;
+}
+input.pitch3[value~="Knuckleball4"] ~ .Knuckleball4 {
+    display:block;
+}
+input.pitch3[value~="Knuckleball5"] ~ .Knuckleball5 {
+    display:block;
+}
+input.pitch3[value~="Knuckleball6"] ~ .Knuckleball6 {
+    display:block;
+}
+
+input.pitch3[value~="Screwball1"] ~ .Screwball1 {
+    display:block;
+}
+input.pitch3[value~="Screwball2"] ~ .Screwball2 {
+    display:block;
+}
+input.pitch3[value~="Screwball3"] ~ .Screwball3 {
+    display:block;
+}
+input.pitch3[value~="Screwball4"] ~ .Screwball4 {
+    display:block;
+}
+input.pitch3[value~="Screwball5"] ~ .Screwball5 {
+    display:block;
+}
+input.pitch3[value~="Screwball6"] ~ .Screwball6 {
+    display:block;
+}
+
+input.pitch3[value~="Spitball1"] ~ .Spitball1 {
+    display:block;
+}
+input.pitch3[value~="Spitball2"] ~ .Spitball2 {
+    display:block;
+}
+input.pitch3[value~="Spitball3"] ~ .Spitball3 {
+    display:block;
+}
+input.pitch3[value~="Spitball4"] ~ .Spitball4 {
+    display:block;
+}
+input.pitch3[value~="Spitball5"] ~ .Spitball5 {
+    display:block;
+}
+input.pitch3[value~="Spitball6"] ~ .Spitball6 {
+    display:block;
+}
+
+input.pitch3[value~="Meatpitch3"] ~ .Meatpitch3 {
+    display:block;
+}
+input.pitch3[value~="Meatpitch2"] ~ .Meatpitch2 {
+    display:block;
+}
+input.pitch3[value~="Meatpitch3"] ~ .Meatpitch3 {
+    display:block;
+}
+input.pitch3[value~="Meatpitch4"] ~ .Meatpitch4 {
+    display:block;
+}
+input.pitch3[value~="Meatpitch5"] ~ .Meatpitch5 {
+    display:block;
+}
+input.pitch3[value~="Meatpitch6"] ~ .Meatpitch6 {
+    display:block;
+}
+
+input.pitch3[value~="Eephus1"] ~ .Eephus1 {
+    display:block;
+}
+input.pitch3[value~="Eephus2"] ~ .Eephus2 {
+    display:block;
+}
+input.pitch3[value~="Eephus3"] ~ .Eephus3 {
+    display:block;
+}
+input.pitch3[value~="Eephus4"] ~ .Eephus4 {
+    display:block;
+}
+input.pitch3[value~="Eephus5"] ~ .Eephus5 {
+    display:block;
+}
+input.pitch3[value~="Eephus6"] ~ .Eephus6 {
+    display:block;
+}
+
+input.pitch3[value~="Curveball1"] ~ .Curveball1 {
+    display:block;
+}
+input.pitch3[value~="Curveball2"] ~ .Curveball2 {
+    display:block;
+}
+input.pitch3[value~="Curveball3"] ~ .Curveball3 {
+    display:block;
+}
+input.pitch3[value~="Curveball4"] ~ .Curveball4 {
+    display:block;
+}
+input.pitch3[value~="Curveball5"] ~ .Curveball5 {
+    display:block;
+}
+input.pitch3[value~="Curveball6"] ~ .Curveball6 {
+    display:block;
+}
+
+
+input.pitch3[value~="Changeup1"] ~ .Changeup1 {
+    display:block;
+}
+input.pitch3[value~="Changeup2"] ~ .Changeup2 {
+    display:block;
+}
+input.pitch3[value~="Changeup3"] ~ .Changeup3 {
+    display:block;
+}
+input.pitch3[value~="Changeup4"] ~ .Changeup4 {
+    display:block;
+}
+input.pitch3[value~="Changeup5"] ~ .Changeup5 {
+    display:block;
+}
+input.pitch3[value~="Changeup6"] ~ .Changeup6 {
+    display:block;
+}
+
+
