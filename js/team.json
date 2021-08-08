@@ -1,0 +1,96 @@
+{
+    "city":"MeddleMetal",
+    "team":"Eladrins",
+    "mascot":"Shanky the Hot Rivet",
+    "players": [
+        {"name":"Pretzels Getzien (S)","type":"scrapper"},
+        {"name":"Pud Galvin (H)","type":"hurler"},
+        {"name":"Pop Schriver (S)","type":"scrapper"},
+        {"name":"Dude Esterbrook (F)","type":"fattie"}
+    ]
+},
+{
+    "city":"Trifond's Folly",
+    "team":"Sandsnappers",
+    "mascot":"Balru the Desert Dragon",
+    "players": [
+
+                {"name":"Malachi Kittridge (H)","type":"hurler"}
+            {"name":"Dick Buckley (F)","type":"fattie"}
+            {"name":"Chippy McGarr (S)","type":"scrapper"}
+            {"name":"Rasty Wright (S)","type":"scrapper"}
+    ]
+},
+{
+    "city":"Ironweld",
+    "team":"Thunderstrikes",
+    "mascot":"Peeny the Hammer",
+    "players": [
+
+        {"name":"Foghorn Bradley (F)","type":"fattie"}
+        {"name":"Tricky Nichols (H)","type":"hurler"}
+        {"name":"Flip Lafferty (F)","type":"fattie"}
+        {"name":"Redleg Snyder (F)","type":"fattie"}
+    ]
+},
+{
+    "city":"AHTOP",
+    "team":"Sabatons",
+    "mascot":"Heelo the Gold Shoe",
+    "players": [
+
+        {"name":"Lady Baldwin (F)","type":"fattie"}
+        {"name":"Adonis Terry (F)","type":"fattie"}
+        {"name":"Jake Virtue (H)","type":"hurler"}
+        {"name":"Peek-A-Boo Veach (S)","type":"scrapper"}
+    ]
+},
+{
+    "city":"Tritown Area",
+    "team":"Noodlers",
+    "mascot":"Muckmouth",
+    "players": [
+
+        {"name":"Darby O’Brien (F)","type":"fattie"}
+        {"name":"Jack Glasscock (F)","type":"fattie"}
+        {"name":"Bug Holliday (S)","type":"scrapper"}
+        {"name":"Oyster Burns (H)","type":"hurler"}
+    ]
+},
+{
+    "city":"Blacksilt",
+    "team":"Stevedores",
+    "mascot":"Karn the Sailer",
+    "players": [
+        {"name":"Pop Corkhill (F)","type":"fattie"}
+        {"name":"Shorty Howe (S)","type":"scrapper"}
+        {"name":"Ducky Hemp (S)","type":"scrapper"}
+        {"name":"Dad Lytle (H)","type":"hurler"}
+    ]
+},
+{
+    "city":"Allafonessa",
+    "team":"Twins",
+    "mascot":"Pwoul and Twoul",
+    "players": [
+        {"name":"Old Hoss Radbourn (H)","type":"hurler"}
+        {"name":"Crazy Schmidt (S)","type":"scrapper"}
+        {"name":"Toad Ramsey (F)","type":"fattie"}
+        {"name":"Phenomenal Smith (F)","type":"fattie"}
+    ]
+},
+{
+    "city":"Bask's Isle",
+    "team":"Crabs",
+    "mascot":"One Big Crab",
+    "players": [
+        {"name":"Doggie Miller (H)","type":"hurler"}
+        {"name":"Tun Berger (S)","type":"scrapper"}
+        {"name":"Lip Pike (S)","type":"scrapper"}
+        {"name":"Joe Blong (S)","type":"scrapper"}
+    ]
+}
+
+
+
+

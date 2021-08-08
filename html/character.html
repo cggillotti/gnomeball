@@ -62,18 +62,45 @@
 <button type="roll" value="!gfield @{gnome_encode} @{player_fielding}" name="roll_fieldCheck">Roll Fielding</button> 
 </div>
 <div class="team_roster">
+    <div class="team_info">
+            <label>Team</label>
+            <select name="attr_team_name" class="type_select">
+                <option value="Eladrins">MeddleMetal Eladrins</option>
+                <option value="Sandsnappers">Trifond's Folly Sandsnappers</option>
+                <option value="Thunderstrikes">Ironweld Thunderstrikes</option>
+                <option value="Sabatons">AHTOP Sabatons</option>
+                <option value="Noodlers">Tritown Area Noodlers</option>
+                <option value="Stevedores">Blacksilt Stevedores</option>
+                <option value="Twins">Allafonessa Twins</option>
+                <option value="Crabs">Bask's Isle Crabs</option>
+            </select>   
+    </div>
+    <div class="team_info">
+           <label>Away or Home</label>
+            <select name="attr_team_is_home" class="type_select">
+                <option value="1">Home</option>
+                <option value="0">Away</option>
+            </select>   
+    </div>
     <div class="team_player">
         <div class="slot">1:</div>
 
         <div class="team_player_info">
             <label>Name</label>
-            <div class="player_name"><input name="attr_team_player1_name" title="" type="text" value="" /></div>
+            <div class="player_name"><input name="attr_team_player1_name" title="" type="text" value="" readonly /></div>
             <label>Type</label>
             <select name="attr_team_player1_type" class="type_select">
-                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
-                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
-                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
-            </select>    
+                <option name="attr_team_player1_type_fattie" value="fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="hurler">Hurler</option>
+            </select>
+            <label>Batting Order</label>
+             <select name="attr_team_player1_lineup" class="type_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                 <option value="4">4</option>
+            </select>   
         </div>
         <input type="hidden" name="attr_gnome1_encode"></input>
         <div class="team_player_abilities">
@@ -102,13 +129,20 @@
 
         <div class="team_player_info">
             <label>Name</label>
-            <div class="player_name"><input name="attr_team_player2_name" title="" type="text" value="" /></div>
+            <div class="player_name"><input name="attr_team_player2_name" title="" type="text" value=""  readonly/></div>
             <label>Type</label>
             <select name="attr_team_player2_type" class="type_select">
-                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
-                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
-                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+                <option name="attr_team_player2_type_fattie" value="fattie">Fattie</option>
+                <option name="attr_team_player2_type_scrapper" value="scrapper">Scrapper</option>
+                <option name="attr_team_player2_type_hurler" value="hurler">Hurler</option>
             </select>    
+              <label>Batting Order</label>
+             <select name="attr_team_player2_lineup" class="type_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                 <option value="4">4</option>
+            </select> 
         </div>
           <input type="hidden" name="attr_gnome2_encode"></input>
         <div class="team_player_abilities">
@@ -138,33 +172,40 @@
 
         <div class="team_player_info">
             <label>Name</label>
-            <div class="player_name"><input name="attr_team_player3_name" title="" type="text" value="" /></div>
+            <div class="player_name"><input name="attr_team_player3_name" title="" type="text" value=""  readonly/></div>
             <label>Type</label>
             <select name="attr_team_player3_type" class="type_select">
-                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
-                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
-                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+                <option name="attr_team_player1_type_fattie" value="fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="hurler">Hurler</option>
             </select>    
+              <label>Batting Order</label>
+             <select name="attr_team_player3_lineup" class="type_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                 <option value="4">4</option>
+            </select> 
         </div>
           <input type="hidden" name="attr_gnome3_encode"></input>
         <div class="team_player_abilities">
         <div class="ability">
             <label>Contact Roll</label>
             <input name="attr_team_player3_contact" title="" type="text" value="" />
-            <button type="roll" value="!gbat @{gnome3_encode}  @{team_player3_contact}" name="roll_contactCheck">Roll Contact</button> 
+            <button type="roll" value="!gbat @{gnome3_encode} @{team_player3_contact}" name="roll_contactCheck">Roll Contact</button> 
         </div>
 
         <div class="ability">
             <label>Power Roll</label>
             <input name="attr_team_player3_power" title="" type="text" value="" />
-            <button type="roll" value="!gpower @{gnome3_encode}  @{team_player3_power}" name="roll_contactCheck">Roll Power</button> 
+            <button type="roll" value="!gpower @{gnome3_encode} @{team_player3_power}" name="roll_contactCheck">Roll Power</button> 
         </div>
 
         <div class="ability">
             <label>Field Roll</label>
             <input name="attr_team_player3_field" title="" type="text" value="" />
              <!--<input name="attr_team_player3_gb" title="" type="text" value="" />-->
-            <button type="roll" value="!gfield @{gnome3_encode}  @{team_player3_field}" name="roll_contactCheck">Roll Field</button> 
+            <button type="roll" value="!gfield @{gnome3_encode} @{team_player3_field}" name="roll_contactCheck">Roll Field</button> 
         </div>
 
         </div>
@@ -175,39 +216,53 @@
 
         <div class="team_player_info">
             <label>Name</label>
-            <div class="player_name"><input name="attr_team_player4_name" title="" type="text" value="" /></div>
+            <div class="player_name"><input name="attr_team_player4_name" title="" type="text" value="" readonly /></div>
             <label>Type</label>
             <select name="attr_team_player4_type" class="type_select">
-                <option name="attr_team_player1_type_fattie" value="Fattie">Fattie</option>
-                <option name="attr_team_player1_type_scrapper" value="Scrapper">Scrapper</option>
-                <option name="attr_team_player1_type_hurler" value="Hurler">Hurler</option>
+                <option name="attr_team_player1_type_fattie" value="fattie">Fattie</option>
+                <option name="attr_team_player1_type_scrapper" value="scrapper">Scrapper</option>
+                <option name="attr_team_player1_type_hurler" value="hurler">Hurler</option>
             </select>    
+              <label>Batting Order</label>
+             <select name="attr_team_player4_lineup" class="type_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                 <option value="4">4</option>
+            </select> 
         </div>
         <input type="hidden" name="attr_gnome4_encode"></input>
         <div class="team_player_abilities">
         <div class="ability">
             <label>Contact Roll</label>
             <input name="attr_team_player4_contact" title="" type="text" value="" />
-            <button type="roll" value="!gbat @{gnome4_encode}  @{team_player4_contact}" name="roll_contactCheck">Roll Contact</button> 
+            <button type="roll" value="!gbat @{gnome4_encode} @{team_player4_contact}" name="roll_contactCheck">Roll Contact</button> 
         </div>
 
         <div class="ability">
             <label>Power Roll</label>
             <input name="attr_team_player4_power" title="" type="text" value="" />
-            <button type="roll" value="!gpower @{gnome4_encode}  @{team_player4_power}" name="roll_contactCheck">Roll Power</button> 
+            <button type="roll" value="!gpower @{gnome4_encode} @{team_player4_power}" name="roll_contactCheck">Roll Power</button> 
         </div>
 
         <div class="ability">
             <label>Field Roll</label>
             <input name="attr_team_player4_field" title="" type="text" value="" />
              <!--<input name="attr_team_player4_gb" title="" type="text" value="" />-->
-            <button type="roll" value="!gfield @{gnome4_encode}  @{team_player4_field}" name="roll_contactCheck">Roll Fielding</button> 
+            <button type="roll" value="!gfield @{gnome4_encode} @{team_player4_field}" name="roll_contactCheck">Roll Fielding</button> 
         </div>
         
         </div>
     </div>
             <label>Team Pitcher</label>
-            <div class="player_name"><input name="attr_team_pitcher" title="" type="text" value="" /></div>
+            <input name="attr_pitcher_name" readonly></input>
+             <input name="attr_pitcher_encode" type="hidden"></input>
+             <select name="attr_team_pitcher" id="pitcherSelect"class="type_select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select> 
 </div>
 
 <br>
@@ -622,7 +677,7 @@
 
 
         </div>
-        <button type="roll" value="!gpitch @{gnome_encode}  @{pitch_3_select} @{pitch_3_level}" name="roll_BluffCheck">Roll Pitch</button>
+        <button type="roll" value="!gpitch @{gnome_encode} @{pitch_3_select} @{pitch_3_level}" name="roll_BluffCheck">Roll Pitch</button>
     </div>
     </div>
     </div>
@@ -736,17 +791,53 @@
 
       });
       
-    on("change:attr_team_player1_type change:attr_team_player2_type change:attr_team_player3_type change:attr_team_player4_type change:attr_team_player1_name  change:attr_team_player2_name change:attr_team_player3_name change:attr_team_player4_name", function(eventInfo){
-           console.log("Change");
-        getAttrs(['team_player1_type','team_player2_type','team_player3_type','team_player4_type','team_player1_name','team_player2_type','team_player3_type','team_player4_type'], (value) => {
+ 
+      
+      on("change:team_pitcher", function(eventInfo) {
+            
+             getAttrs(['team_pitcher','team_player1_name','team_player2_name','team_player3_name','team_player4_name','team_player1_type','team_player2_type','team_player3_type','team_player4_type',], (value) => {
+                 
+                switch(value.team_pitcher) {
+                    
+                    case 1:
+                        setAttrs({'pitcher_encode':btoa( value.team_player1_name +"|"+value.team_player1_type) });
+                        setAttrs({'gnome_encode':btoa( value.team_player4_name +"|"+value.team_player1_type) });
+                        setAttrs({'pitcher_name':value.team_player1_name});
+                        
+                        break;
+                     case 2:
+                        setAttrs({'pitcher_encode':btoa( value.team_player2_name +"|"+value.team_player1_type) });
+                        setAttrs({'gnome_encode':btoa( value.team_player4_name +"|"+value.team_player1_type) });
+                        setAttrs({'pitcher_name':value.team_player2_name});
+                        
+                        break;
+                     case 3:
+                        setAttrs({'pitcher_encode':btoa( value.team_player3_name +"|"+value.team_player1_type) });
+                        setAttrs({'gnome_encode':btoa( value.team_player4_name +"|"+value.team_player1_type) });
+                        setAttrs({'pitcher_name':value.team_player3_name});
+                        
+                        break;
+                     case 4:
+                        setAttrs({'pitcher_encode':btoa( value.team_player4_name +"|"+value.team_player1_type) });
+                        setAttrs({'gnome_encode':btoa( value.team_player4_name +"|"+value.team_player1_type) });
+                        setAttrs({'pitcher_name':value.team_player4_name});
+                        
+                        break;
+                    
+                }
+
+        });
+      });
+      
+    on("change:team_player1_type change:team_player2_type change:team_player3_type change:team_player4_type change:team_player1_name change:team_player2_name change:team_player3_name change:team_player4_name", function(eventInfo){
+           console.log("Change Team names");
+        getAttrs(['team_player1_type','team_player2_type','team_player3_type','team_player4_type','team_player1_name','team_player2_name','team_player3_name','team_player4_name','team_pitcher'], (value) => {
             setAttrs({'gnome1_encode':btoa( value.team_player1_name +"|"+value.team_player1_type) });
             setAttrs({'gnome2_encode':btoa( value.team_player2_name +"|"+value.team_player2_type) });
             setAttrs({'gnome3_encode':btoa( value.team_player3_name +"|"+value.team_player3_type) });
             setAttrs({'gnome4_encode':btoa( value.team_player4_name +"|"+value.team_player4_type) });
-        });
 
-        
-        
+        });
         
     });
 
@@ -771,7 +862,6 @@
         setAttrs({'gnome_encode':btoa( value.gnome_name +"|"+value.player_type) });
 
         
-
       });
 
     });

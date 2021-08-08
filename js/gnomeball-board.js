@@ -20,24 +20,6 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
             if(inning > 3) {
                 scoreTitle = "Totals";
                 scorePrefix = "Total";
-                
-                // var boxid = createObj('text', {
-                // left: 400 + inning*60,
-                // top: 400,
-                // width: 50,
-                // height: 50,
-                // layer: 'objects',
-                // font_size: 100,
-                // text: scoreTitle,
-                // pageid: currentPageID,
-                // font_family: 'Arial'
-                
-                // });
-               
-                // log("new inning: " + boxid.get("_id"));
-                
-                // state.Gnomeball.field[scoreTitle + inning + "Home"]= boxid.get("_id");
-                    
             }
 
           
@@ -55,12 +37,9 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
                 
             });
            
-            log(" away: " + awayScore.get("_id"));
-            
+    
             state.Gnomeball.field[scorePrefix+"Away"] = awayScore.get("_id");
-            log("Away: "+ scorePrefix+"Away");
-            
-            
+
             var homeScore = createObj('text', {
                 left: 100 + inning*180,
                 top: 440,
@@ -74,14 +53,22 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
                 
             });
            
-            log("inning home: " + homeScore.get("_id"));
+       
             state.Gnomeball.field[scorePrefix+ "Home"]= homeScore.get("_id");
-            log("State"+state.Gnomeball.field[scorePrefix+ "Home"]);
         }
 
         function createHomeAndAwayText() {
-            
             var currentPageID = Campaign().get('playerpageid');
+            const teams = GnomePitches.teams;
+            const otherTeamCharacterId ='-MdDMCFiFj-DKnFaA96h';
+            var otherTeam = getObj('character',otherTeamCharacterId);
+            let team = teams[getAttrByName(otherTeamCharacterId, "team_name")];
+            let boysHome = getAttrByName(otherTeamCharacterId, "team_is_home") == 0;
+            let boysTeam = "Tritown Area"
+            let otherCity = team.city;
+            let otherTeamNameText = boysHome !== true ? boysTeam : otherCity;
+            let homeTeamNameText = boysHome === true ? boysTeam : otherCity;
+            
     
             var awayTeamName = createObj('text', {
                 left: 80,
@@ -90,7 +77,7 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
                 height: 50,
                 layer: 'objects',
                 font_size: 26,
-                text: "Away",
+                text: otherTeamNameText,
                 pageid: currentPageID,
                 font_family: 'Arial'
                 
@@ -104,7 +91,7 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
                 height: 50,
                 layer: 'objects',
                 font_size: 26,
-                text: "Home",
+                text: homeTeamNameText,
                 pageid: currentPageID,
                 font_family: 'Arial'
                 
@@ -168,33 +155,65 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
             state.Gnomeball.field[team+"LineUp"+number]= playerName.get("_id");
             
         }
-     
-        function createTeamLineUpBoxes() {
         
-            for (let i =0; i < 4; i++) {
-                makePlayerBox( "Home", i);
+         
+        function movePlayerToOrder(id,position,isHome) {
+            
+            let left = 150;
+            let teamName = isHome ? "Home" : "Away";
+            
+            if(!isHome) {
+                left = 880;
+            }
+
+            let charToken = findObjs({"_type":'graphic', 'represents':id})[0];
+            if(!charToken){
+                charToken = getObj('graphic', id);
             }
             
-            for (let i =0; i < 4; i++) {
-                makePlayerBox( "Away", i);
-            }
+            charToken.set({
+                "left": left,
+                "top":420 + (position+2) * 110,
+                "aura1_radius":""
+            });
+            
+            state.Gnomeball.field[teamName+"LineUp"+position] = charToken.get('_id');
+        }
+     
+        function createTeamLineUpBoxes() {
+            const otherTeamCharacterId ='-MdDMCFiFj-DKnFaA96h';
+            var otherTeam = getObj('character',otherTeamCharacterId);
+            let boysHome = getAttrByName(otherTeamCharacterId, "team_is_home") == 0;
+        
+            movePlayerToOrder("-MdDH-xA3-d81x8Cg0zu",1,boysHome);
+            movePlayerToOrder("-MdDG9MILxmRJFHNHNsJ",2,boysHome);
+            movePlayerToOrder("-MdDG_MmRDLXhBxmo14y",3,boysHome);
+            movePlayerToOrder("-MdDGR3I1ObOwvrGu7Nq",0,boysHome);
+            
+            movePlayerToOrder("-MerB70oO4gIId4vrT8c",1,!boysHome);
+            movePlayerToOrder("-MerB8BQLUD3NGHbY6M9",2,!boysHome);
+            movePlayerToOrder("-MerBAfpsBGE0UjFjWTB",3,!boysHome);
+            movePlayerToOrder("-MerBCXKWUlVCQ8KI_lo",0,!boysHome);
+            
             
         }
 
         function setUpGame(removeState = true) {
-             removeOld();
+            removeOld();
 
             state.Gnomeball.field = {};
-    
+            
        
             createScoreboardBox(1);
             createScoreboardBox(2);
             createScoreboardBox(3);
             createScoreboardBox(4);
+            
+            
             createHomeAndAwayText();
             createOuts();
             createTeamLineUpBoxes();
-            
+                      updateOtherTeam();
             log( state.Gnomeball.field);
     
         }
@@ -242,18 +261,48 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
             
         }
         
+      function updateOtherTeam() {
+          const teams = GnomePitches.teams;
+      
+          let playerInc = 0;
+          const otherTeamCharacterId ='-MdDMCFiFj-DKnFaA96h';
+           var otherTeam = getObj('character',otherTeamCharacterId);
+           let team = teams[getAttrByName(otherTeamCharacterId, "team_name")];
+           let isHome = getAttrByName(otherTeamCharacterId, "team_is_home") === "1";
+
+            let prefix = isHome ? "HomeLineUp" : "AwayLineUp";
+     
+           team.players.forEach((player) => {
+               getObj('graphic', state.Gnomeball.field[prefix+playerInc]).set("name",player.name);
+               
+               findObjs({'type':'attribute', 'name':"team_player"+(playerInc+1)+"_name"}).forEach(i => {
+                   i.setWithWorker({current: player.name});
+                   });
+
+                 findObjs({'type':'attribute', 'name':"team_player"+(playerInc+1)+"_type"}).forEach(i => {
+                     log(i)
+                   i.setWithWorker({current: player.type});
+                   });
+                   
+                playerInc++;
+           });
+      }
+        
       function getTeamsAndPlayers() {
-          var currentPageID = Campaign().get('playerpageid');
+         // var currentPageID = Campaign().get('playerpageid');
+        
           var homeTeam = getObj('text', state.Gnomeball.field['HomeTeam']).get("text");
           var awayTeam = getObj('text', state.Gnomeball.field["AwayTeam"]).get("text");
-          var home1 = getObj('text', state.Gnomeball.field["HomeLineUp0"]).get("text");
-          var home2 = getObj('text', state.Gnomeball.field["HomeLineUp1"]).get("text");
-          var home3 = getObj('text', state.Gnomeball.field["HomeLineUp2"]).get("text");
-          var away4 = getObj('text', state.Gnomeball.field["AwayLineUp3"]).get("text");
-          var home4 = getObj('text', state.Gnomeball.field["HomeLineUp3"]).get("text");
-          var away1 = getObj('text', state.Gnomeball.field["AwayLineUp0"]).get("text");
-          var away2 = getObj('text', state.Gnomeball.field["AwayLineUp1"]).get("text");
-          var away3 = getObj('text', state.Gnomeball.field["AwayLineUp2"]).get("text");
+          
+          var home1 = getObj('graphic', state.Gnomeball.field["HomeLineUp0"]).get("name");
+          var home2 = getObj('graphic', state.Gnomeball.field["HomeLineUp1"]).get("name");
+          var home3 = getObj('graphic', state.Gnomeball.field["HomeLineUp2"]).get("name");
+          var home4 = getObj('graphic', state.Gnomeball.field["HomeLineUp3"]).get("name");
+          
+          var away1 = getObj('graphic', state.Gnomeball.field["AwayLineUp0"]).get("name");
+          var away2 = getObj('graphic', state.Gnomeball.field["AwayLineUp1"]).get("name");
+          var away3 = getObj('graphic', state.Gnomeball.field["AwayLineUp2"]).get("name");
+          var away4 = getObj('graphic', state.Gnomeball.field["AwayLineUp3"]).get("name");
 
           state.Gnomeball.currentGame.homeTeam.name = homeTeam;
           state.Gnomeball.currentGame.homeTeam.players = [
@@ -262,17 +311,21 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
               home3,
               home4
               ];
-              state.Gnomeball.currentGame.awayTeam.name = awayTeam;
-              state.Gnomeball.currentGame.awayTeam.players = [
-                  away1,
-                  away2,
-                  away3,
-                  away4
+          state.Gnomeball.currentGame.awayTeam.name = awayTeam;
+          state.Gnomeball.currentGame.awayTeam.players = [
+              away1,
+              away2,
+              away3,
+              away4
                   ];
-          log("Hometeam"+homeTeam);
-          log("Away"+awayTeam);
+ 
       }
 
+       on("change:attribute", function(obj, prev) {
+            if(obj.get("name") == "team_name") {
+                 updateOtherTeam();
+            }
+        });
 
     on("ready",()=>{
         checkInstall();
@@ -280,7 +333,8 @@ const GnomeBoard = (() => { // eslint-disable-line no-unused-vars
 
     return {
         setUpGame: setUpGame,
-        getTeamsAndPlayers: getTeamsAndPlayers
+        getTeamsAndPlayers: getTeamsAndPlayers,
+       
     };
 
 })();
